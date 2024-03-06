@@ -31,7 +31,7 @@
     "custom_liquid_qPPDDQ": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "{{collection.metafield.custom.test}}",
+        "custom_liquid": "{{collection.metafields.custom.test}}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
