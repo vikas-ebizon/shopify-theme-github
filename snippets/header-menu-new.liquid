@@ -125,14 +125,20 @@
 <div id="header">
     <div class="container">
       <div class="inner">
-        <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a>
-            <ul>
-              <li><a href="#">Marketing</a></li>
-              <li><a href="#">Webdesign</a></li>
-              <li><a href="#">Sales</a></li>
+<ul class="nav">
+    {%- for link in section.settings.menu.links -%}   
+        {%- if link.links != blank -%}
+          <li><a href="{{ link.handle }}" id="Details-HeaderMenu-{{ forloop.index }}" class=" {%- if link.child_active %} header__active-menu-item {% endif %}"> {{- link.title | escape -}}</a></li>
+            <ul class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}" role="list">
+             {%- for childlink in link.links -%}
+              <li> <a  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                        href="{{ childlink.url }}"
+                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        {% if childlink.current %}
+                          aria-current="page"
+                        {% endif %}
+                      > {{ childlink.title | escape }}</a></li>
+                {%- endfor -%}
             </ul>
           </li>
           <li class="big-nav"><a href="#">Products</a>
@@ -228,7 +234,10 @@
             </ul>
           </li>
           <li><a href="#">Contact</a></li>
-        </ul>
+       {% endif %}
+        {% endfor %}
+          </ul>
+      
       </div>
     </div>
   </div>
