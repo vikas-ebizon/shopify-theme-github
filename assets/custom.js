@@ -1,11 +1,9 @@
 $(document).ready(function($) {
         // Add en remove class on menu item hover  
         $('.big-nav > ul > li').mouseover(function(){
-          alert("entered");
           $(this).addClass('show').siblings().removeClass('show');
         });
 
-  console.log("entered");
         // Get the minimum height the big-nav elemtn
         var min_height = 50;
         $('.big-nav > ul > li > ul').each(function(){
