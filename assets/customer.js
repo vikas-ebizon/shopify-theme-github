@@ -84,7 +84,7 @@ class CustomerAddresses {
   };
 }
 
-jQuery(function($) {
+$(document).ready(function($) {
         // Add en remove class on menu item hover  
         $('.big-nav > ul > li').mouseover(function(){
           $(this).addClass('show').siblings().removeClass('show');
