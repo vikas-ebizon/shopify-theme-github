@@ -89,7 +89,8 @@ jQuery(function($) {
         $('.big-nav > ul > li').mouseover(function(){
           $(this).addClass('show').siblings().removeClass('show');
         });
-        
+
+  console.log("entered");
         // Get the minimum height the big-nav elemtn
         var min_height = 50;
         $('.big-nav > ul > li > ul').each(function(){
